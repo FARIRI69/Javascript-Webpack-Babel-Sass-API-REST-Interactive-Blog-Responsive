@@ -1,0 +1,1 @@
+{"version":3,"file":"topbar.bundle.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAAC,QAAQ,CAAC,C","sources":["webpack://js-projject/./src/assets/javascripts/topbar.js"],"sourcesContent":["console.log(\"topbar\");"],"names":["console","log"],"sourceRoot":""}

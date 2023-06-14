@@ -1,0 +1,14 @@
+/* Les differentes couleurs qui vont composer notre application */
+
+:root{ /* qui correspond a notre balise html */
+  --primary:#aabcd5;
+  --dark:#00cec9; /*couleur secondaire */
+  --dark-grey:rgb(0, 208, 255);
+  --accent:#121315d3;
+  --text:#333;
+  --error:rgb(255, 0, 0);
+  --divider:rgb(199, 193, 193);
+  --font-family:'Roboto', sans-serif;
+  --box-shadow:0 1px 2px 0 rgba(60, 64, 67, 0.3),
+  0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}

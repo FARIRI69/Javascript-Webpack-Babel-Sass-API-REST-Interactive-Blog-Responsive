@@ -1,0 +1,98 @@
+@use 'base';
+@use 'variables';
+@use 'reset';
+@use 'classes';
+@use 'utils';
+@use 'media-queries' as *;
+
+.container{
+    min-height:100vh; /*pour prendre toute la largeur de l'ecran*/
+    display:grid;
+    grid:   /*on definit notre grille*/
+    "header" auto /*auto, pour que le header premnent le minimum d'espa ce dont le header a besoin*/
+    "content" 1fr /*1fr prends tout l'espace restant disponible*/
+    "footer" auto /
+    auto
+}
+
+/*les differends elements qui vont composer notre page*/
+
+header{
+    grid-area: header;
+    background:var(--primary);
+    padding:20px;
+    display:flex;/*mettre les menu a droite*/
+    flex-flow:row nowrap;/* pour pas ce va a la ligne les menu de droite, et horizontal*/
+    justify-content: space-between;/*aligner les onglets de droite selon l'axe principal*/
+    align-items: center;/*alignement vertical*/
+    a{
+        color:white; /*on donne une couleur blanche a nos lien car ils sont dans la topnbar*/
+    }
+    .header-brand{
+          font-size:4rem; /*taille du logo*/
+          font-weight: 700;/*en gras*/
+    }
+    .header-menu{  /*l'idee est que la bar mobile n'apparaissent que si nous sommes au format mobile*/
+        position:relative;
+       ul{
+        @include xs{
+            display:none;
+        }
+        display:flex; /*aligner les deux onglets de droite horizontalement*/
+        li{
+            .header-nav{
+               font-size: 1.8rem;
+               padding:0 10px;
+            }
+            .active{
+                font-weight: 700;/*pour mettre en gras le mot accueil*/
+                text-decoration: underline;/*souligner accueil*/
+            }
+        }
+    }
+
+       .header-menu-icon{  /*configuration de la barre mobile*/
+            display:none;
+            font-size: 3rem;
+            color:white;
+            @include xs{
+                display:block;
+            }
+         }
+         .mobile-menu {  /*reglage du menue mobile quand on clique sur l'icone*/
+            position:absolute;
+            box-shadow: var(--box-shadow);
+            top:9.5rem;
+            right:1rem;
+            padding:3rem 1.5rem;
+            width: 200px;
+            background: white;
+            ul{
+                display: block;
+                li{
+                    a{
+                        color:var(--text);
+                    }
+                }
+            }
+         }
+         .mobile-menu.open{
+            display:block;
+         }
+    }
+}
+
+.content{
+    grid-area:content;
+    
+    padding:20px;
+}
+
+footer{
+    grid-area:footer;
+    background: var(--primary);
+    text-align: center;
+    color:white;
+  
+    padding:20px;
+}
